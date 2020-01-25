@@ -1,0 +1,35 @@
+<resources>
+    <!--  apps string  -->
+    <string name="app_name">Kasir</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+    <string name="email">Email</string>
+    <string name="my_email">muhafrinal@gmail.com</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="not_have_account">Not have account yet ?</string>
+    <string name="register">Register !</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register_note">By Pressing \'Register\' you agree to our</string>
+    <string name="txt_terms_condition"><u>Terms &amp; Condition</u></string>
+    <string name="dashboard">Dashboard</string>
+
+    <!--  Dashboard menu  -->
+    <string-array name="menu_name">
+        <item>Kelola Produk</item>
+        <item>Pegawai</item>
+        <item>Outlet</item>
+        <item>Pesanan Barang</item>
+        <item>Pembiayaan</item>
+        <item>Bayar Tagihan</item>
+    </string-array>
+
+    <array name="menu_img">
+        <item>@drawable/produk</item>
+        <item>@drawable/pegawai</item>
+        <item>@drawable/outlet</item>
+        <item>@drawable/pesan_barang</item>
+        <item>@drawable/pembiayaan</item>
+        <item>@drawable/bayar_tagihan</item>
+    </array>
+</resources>
