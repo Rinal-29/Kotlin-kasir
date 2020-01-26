@@ -44,21 +44,21 @@ class SliderActivity : AppCompatActivity() {
         // add list item to SliderItem
         listItem.add(
             SliderItem(
-                "This Is",
+                "Page 1",
                 "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. ",
                 R.drawable.undraw_shared_workspace
             )
         )
         listItem.add(
             SliderItem(
-                "From Slider",
+                "Page 2",
                 "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. ",
                 R.drawable.undraw_code_thinking
             )
         )
         listItem.add(
             SliderItem(
-                "Tutorial :v ",
+                "Page 3",
                 "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. ",
                 R.drawable.undraw_moving_forward
             )
@@ -112,7 +112,7 @@ class SliderActivity : AppCompatActivity() {
             // save state so next time user run app
             // we know that he is already looked slider activity
             // put boolean to know the state
-            //savePrefsData()
+            savePrefsData()
             finish()
         }
     }

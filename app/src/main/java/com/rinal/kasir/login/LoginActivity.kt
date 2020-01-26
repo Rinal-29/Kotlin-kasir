@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
-import com.rinal.kasir.MainActivity
+import com.rinal.kasir.DashboardActivity
 import com.rinal.kasir.R
 import com.rinal.kasir.regist.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btn_login.setOnClickListener {
-            val intent = Intent(applicationContext, MainActivity::class.java)
+            val intent = Intent(applicationContext, DashboardActivity::class.java)
             startActivity(intent)
             finish()
         }
