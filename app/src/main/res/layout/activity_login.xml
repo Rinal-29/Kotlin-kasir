@@ -90,5 +90,6 @@
             android:textColor="@color/gradient_end_color"
             android:text="@string/register"
             android:padding="4dp"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
