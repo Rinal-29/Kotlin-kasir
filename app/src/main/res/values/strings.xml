@@ -32,6 +32,7 @@
         <item>@drawable/pembiayaan</item>
         <item>@drawable/bayar_tagihan</item>
     </array>
+
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
