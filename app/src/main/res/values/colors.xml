@@ -10,13 +10,10 @@
     <color name="gradient_end_color">#6200ee</color>
 
     <!--  color for tabs and screen text  -->
-    <color name="tab_indicator_gray">#c0c0c0</color>
     <color name="intro_title_color">#000000</color>
-    <color name="intro_description_color">#656565</color>
 
     <!-- color for background  -->
     <color name="color_back_gray">#f0f0f5</color>
-    <color name="layout_background">#F6F7FA</color>
 
     <!--  text color  -->
     <color name="textColorPrimary">#38475B</color>
