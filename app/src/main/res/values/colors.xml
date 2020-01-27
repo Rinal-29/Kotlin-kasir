@@ -2,12 +2,12 @@
 
 <resources>
     <color name="colorPrimary">#FFF</color>
-    <color name="colorPrimaryDark">#aaa</color>
+    <color name="colorPrimaryDark">#3700b3</color>
     <color name="colorAccent">#ffffff</color>
 
     <!--  color for buttons style  -->
-    <color name="gradient_start_color">#4c84ff</color>
-    <color name="gradient_end_color">#18a3fe</color>
+    <color name="gradient_start_color">#3700b3</color>
+    <color name="gradient_end_color">#6200ee</color>
 
     <!--  color for tabs and screen text  -->
     <color name="tab_indicator_gray">#c0c0c0</color>
@@ -20,5 +20,8 @@
 
     <!--  text color  -->
     <color name="textColorPrimary">#38475B</color>
+
+    <!--  action bar color  -->
+    <color name="actionBarColor">#6200ee</color>
 
 </resources>

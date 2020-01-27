@@ -1,18 +1,27 @@
-package com.rinal.kasir
+package com.rinal.kasir.ui.dashboard
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.rinal.kasir.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_dashboard_item.view.*
 
-class DashboardAdapter(private val context: Context ,private val item : List<ItemDashboard>, private val listener : (ItemDashboard) -> Unit)
+class DashboardAdapter(private val context: Context, private val item : List<ItemDashboard>, private val listener : (ItemDashboard) -> Unit)
     : RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
-        ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_dashboard_item, parent, false))
+        ViewHolder(
+            LayoutInflater.from(
+                context
+            ).inflate(
+                R.layout.list_dashboard_item,
+                parent,
+                false
+            )
+        )
 
     override fun getItemCount(): Int = item.size
 

@@ -1,4 +1,4 @@
-package com.rinal.kasir
+package com.rinal.kasir.ui.dashboard
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

@@ -1,4 +1,4 @@
-package com.rinal.kasir.regist
+package com.rinal.kasir.register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
