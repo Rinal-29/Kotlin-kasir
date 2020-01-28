@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/login_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".login.LoginActivity"
     android:background="@drawable/bg_gradient">
@@ -30,9 +31,8 @@
     <EditText
         android:id="@+id/edt_username"
         android:layout_marginTop="48dp"
-        android:hint="@string/email"
-        android:text="@string/my_email"
-        android:inputType="textEmailAddress"
+        android:hint="@string/username"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_circle"

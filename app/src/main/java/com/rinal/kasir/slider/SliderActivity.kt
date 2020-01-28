@@ -11,7 +11,6 @@ import android.view.animation.AnimationUtils
 import com.google.android.material.tabs.TabLayout
 import com.rinal.kasir.login.LoginActivity
 import com.rinal.kasir.R
-import com.rinal.kasir.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_slider.*
 
 class SliderActivity : AppCompatActivity() {

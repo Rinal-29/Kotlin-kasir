@@ -13,7 +13,6 @@ import com.rinal.kasir.entity.Users
 import com.rinal.kasir.model.MainViewModel
 import kotlinx.android.synthetic.main.activity_register.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.security.spec.MGF1ParameterSpec.SHA1
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -70,7 +69,6 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         if (!isEmptyFields && isInvalidPassword){
-
             if (password != confirmPassword){
                 Toast.makeText(applicationContext, "Password harus sama", Toast.LENGTH_LONG).show()
             } else {
@@ -85,7 +83,6 @@ class RegisterActivity : AppCompatActivity() {
                 isRegister = true
             }
         }
-
         return isRegister
     }
 }

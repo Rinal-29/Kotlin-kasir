@@ -32,7 +32,7 @@
         android:id="@+id/edt_username"
         android:layout_marginTop="48dp"
         android:hint="@string/username"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_circle"

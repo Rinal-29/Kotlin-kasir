@@ -3,14 +3,25 @@ package com.rinal.kasir.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import com.rinal.kasir.MainActivity
 import com.rinal.kasir.R
+import com.rinal.kasir.model.MainViewModel
 import com.rinal.kasir.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.edt_password
+import kotlinx.android.synthetic.main.activity_login.edt_username
+import kotlinx.android.synthetic.main.activity_login.tv_register
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.math.truncate
 
 class LoginActivity : AppCompatActivity() {
+
+    private val mainViewModel : MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +33,6 @@ class LoginActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_login)
 
-        supportActionBar?.hide()
-
         img_back.setOnClickListener {
             onBackPressed()
         }
@@ -34,9 +43,50 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btn_login.setOnClickListener {
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            userLogin()
         }
+    }
+
+    private fun userLogin(){
+        val username = edt_username.text.toString()
+        val password = edt_password.text.toString()
+
+        var usernameDb : String?
+        var passwordDB : String?
+
+        var isSuccessfull = true
+        var isNotEmpty = true
+        
+        if (password.length <= 4){
+            isNotEmpty = false
+            edt_password.error = "password minimal 5 karakter"
+        }
+
+        mainViewModel.getByName(username).observe(this, Observer{
+            if (it.isEmpty()){
+                usernameDb = "null"
+                passwordDB = "null"
+            } else {
+                usernameDb = it?.get(0)?.nameUser
+                passwordDB = it?.get(0)?.password
+            }
+
+            if (username != usernameDb) {
+                isSuccessfull = false
+                edt_username.error = "Username salah atau belum terdaftar"
+            }
+
+            if (password != passwordDB) {
+                isSuccessfull = false
+                edt_password.error = "Password salah atau belum terdaftar"
+            }
+
+            if (isSuccessfull && isNotEmpty){
+                Toast.makeText(applicationContext, "Login Berhasil", Toast.LENGTH_SHORT).show()
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        })
     }
 }
