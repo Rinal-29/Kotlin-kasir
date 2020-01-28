@@ -20,7 +20,7 @@ interface UserDao {
     fun getConfirmPassword(confirmPassword: String)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertUser()
+    fun insertUser(users: Users)
 
     @Update
     fun updateUser(users: Users)
