@@ -44,4 +44,5 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="profile">Profile</string>
     <string name="transaksi">Transaksi</string>
+    <string name="username">Username</string>
 </resources>

@@ -7,9 +7,10 @@ import androidx.room.RoomDatabase
 import com.rinal.kasir.entity.Users
 
 @Database (
-    entities = [Users::class], version = 1
+    entities = [Users::class], version = 1 , exportSchema = false
 )
 abstract class Databases : RoomDatabase() {
+
     abstract fun userDao() : UserDao
 
     companion object {
@@ -23,7 +24,8 @@ abstract class Databases : RoomDatabase() {
                         context.applicationContext,
                         Databases::class.java,
                         "kasir.db"
-                    ).allowMainThreadQueries().build()
+                    ).allowMainThreadQueries()
+                        .build()
                 }
                 return INSTANCE as Databases
             }

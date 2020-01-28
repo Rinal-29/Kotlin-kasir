@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils
 import com.google.android.material.tabs.TabLayout
 import com.rinal.kasir.login.LoginActivity
 import com.rinal.kasir.R
+import com.rinal.kasir.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_slider.*
 
 class SliderActivity : AppCompatActivity() {
@@ -30,7 +31,7 @@ class SliderActivity : AppCompatActivity() {
 
         // check when this activity want to launch
         if (restorePrefData()){
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            val intent = Intent(applicationContext, RegisterActivity::class.java)
             startActivity(intent)
             finish()
         }

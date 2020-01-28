@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edt_email"
+        android:id="@+id/edt_username"
         android:layout_marginTop="48dp"
         android:hint="@string/email"
         android:text="@string/my_email"
@@ -43,7 +43,7 @@
         android:layout_marginTop="16dp"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/edt_email"
+        app:layout_constraintTop_toBottomOf="@id/edt_username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         style="@style/editTextStyle"/>

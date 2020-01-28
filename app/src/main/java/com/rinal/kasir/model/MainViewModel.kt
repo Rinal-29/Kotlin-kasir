@@ -13,11 +13,5 @@ class MainViewModel (private val databases: Databases) : ViewModel() {
 
     fun deleteUser (users: Users) = databases.userDao().deleteUser(users)
 
-    fun getUsername (nameUser : String) = databases.userDao().getUsername(nameUser)
-
-    fun getPassword (password : String) = databases.userDao().getPassword(password)
-
-    fun getConfirmPassword (confirmPassword : String) = databases.userDao().getConfirmPassword(confirmPassword)
-
     fun getAllUser () : LiveData<List<Users>> = databases.userDao().getAllUser()
 }
