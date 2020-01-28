@@ -31,7 +31,7 @@ class SliderActivity : AppCompatActivity() {
 
         // check when this activity want to launch
         if (restorePrefData()){
-            val intent = Intent(applicationContext, RegisterActivity::class.java)
+            val intent = Intent(applicationContext, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
