@@ -45,4 +45,6 @@
     <string name="profile">Profile</string>
     <string name="transaksi">Transaksi</string>
     <string name="username">Username</string>
+    <string name="akun">Akun</string>
+    <string name="edit_akun">Edit Akun</string>
 </resources>

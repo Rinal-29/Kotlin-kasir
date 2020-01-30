@@ -3,7 +3,6 @@ package com.rinal.kasir.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
@@ -17,7 +16,6 @@ import kotlinx.android.synthetic.main.activity_login.edt_password
 import kotlinx.android.synthetic.main.activity_login.edt_username
 import kotlinx.android.synthetic.main.activity_login.tv_register
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import kotlin.math.truncate
 
 class LoginActivity : AppCompatActivity() {
 
@@ -54,13 +52,7 @@ class LoginActivity : AppCompatActivity() {
         var usernameDb : String?
         var passwordDB : String?
 
-        var isSuccessfull = true
-        var isNotEmpty = true
-        
-        if (password.length <= 4){
-            isNotEmpty = false
-            edt_password.error = "password minimal 5 karakter"
-        }
+        var isSuccess = true
 
         mainViewModel.getByName(username).observe(this, Observer{
             if (it.isEmpty()){
@@ -72,18 +64,23 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (username != usernameDb) {
-                isSuccessfull = false
+                isSuccess = false
+                edt_password.error = "Password salah atau belum terdaftar"
                 edt_username.error = "Username salah atau belum terdaftar"
             }
 
             if (password != passwordDB) {
-                isSuccessfull = false
+                isSuccess = false
+                edt_username.error = "Username salah atau belum terdaftar"
                 edt_password.error = "Password salah atau belum terdaftar"
             }
 
-            if (isSuccessfull && isNotEmpty){
+            if (isSuccess){
                 Toast.makeText(applicationContext, "Login Berhasil", Toast.LENGTH_SHORT).show()
                 val intent = Intent(applicationContext, MainActivity::class.java)
+                val bundle = Bundle()
+                bundle.putParcelable("USERS", it[0])
+                intent.putExtra("userBundle", bundle)
                 startActivity(intent)
                 finish()
             }

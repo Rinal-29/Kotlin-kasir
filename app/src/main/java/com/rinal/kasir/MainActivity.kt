@@ -11,7 +11,9 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.widget.ImageView
 import android.widget.TextView
+import com.rinal.kasir.entity.Users
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 
@@ -32,13 +34,18 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
-        val profileCircleImageView = navView.getHeaderView(0).findViewById<CircleImageView>(R.id.profileImg)
+        val bundle = intent.getBundleExtra("userBundle")
+        val user = bundle?.getParcelable<Users>("USERS")
+
+        val profileImageView = navView.getHeaderView(0).findViewById<ImageView>(R.id.profileImg)
         val userName = navView.getHeaderView(0).findViewById<TextView>(R.id.username)
         val statusUser = navView.getHeaderView(0).findViewById<TextView>(R.id.status_user)
 
-        Picasso.get().load(R.drawable.produk).into(profileCircleImageView)
-        userName.text = "Muh Afrinal Hakim"
-        statusUser.text = "admin"
+        user?.imgUser?.let {img ->
+            Picasso.get().load(img).fit().into(profileImageView)
+        }
+        userName.text = user?.nameUser
+        statusUser.text = user?.status
 
         appBarConfiguration = AppBarConfiguration(
             setOf(

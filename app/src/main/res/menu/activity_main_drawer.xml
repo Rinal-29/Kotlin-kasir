@@ -15,12 +15,12 @@
             android:title="@string/transaksi"/>
     </group>
 
-    <item android:title="@string/profile">
+    <item android:title="@string/akun">
         <menu>
             <item
                 android:id="@+id/nav_profile"
                 android:icon="@drawable/ic_person_black"
-                android:title="@string/edit_profile"/>
+                android:title="@string/edit_akun"/>
         </menu>
     </item>
 </menu>
