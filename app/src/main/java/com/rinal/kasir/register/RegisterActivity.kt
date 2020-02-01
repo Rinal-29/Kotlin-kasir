@@ -3,17 +3,14 @@ package com.rinal.kasir.register
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.rinal.kasir.R
 import com.rinal.kasir.entity.Users
 import com.rinal.kasir.model.MainViewModel
 import kotlinx.android.synthetic.main.activity_register.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -34,7 +31,7 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
 
-        btn_register.setOnClickListener {
+        btn_create_account.setOnClickListener {
             if (userRegister()){
                 Snackbar.make(register_layout, "Berhasil Daftar, Silahkan Login", Snackbar.LENGTH_LONG).show()
             } else {
@@ -45,13 +42,20 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun userRegister() : Boolean {
 
+        val email = edt_email.text.toString()
         val username = edt_username.text.toString()
         val password = edt_password.text.toString()
-        val confirmPassword = edt_confirm_password.text.toString()
+        val fullname = edt_full_name.text.toString()
+        val outlet = edt_outlet.text.toString()
 
         var isEmptyFields = false
         var isInvalidPassword = true
         var isRegister = false
+
+        if (TextUtils.isEmpty(email)){
+            isEmptyFields = true
+            edt_email.error = "Field tidak boleh kosong"
+        }
 
         if (TextUtils.isEmpty(username)){
             isEmptyFields = true
@@ -63,26 +67,29 @@ class RegisterActivity : AppCompatActivity() {
             edt_password.error = "password minimal 5 karakter"
         }
 
-        if (confirmPassword.length <= 4){
-            isInvalidPassword = false
-            edt_confirm_password.error = "password minimal 5 karakter"
+        if (TextUtils.isEmpty(fullname)){
+            isEmptyFields = true
+            edt_full_name.error = "Field tidak boleh kosong"
+        }
+
+        if (TextUtils.isEmpty(outlet)){
+            isEmptyFields = true
+            edt_outlet.error = "Field tidak boleh kosong"
         }
 
         if (!isEmptyFields && isInvalidPassword){
-            if (password != confirmPassword){
-                Toast.makeText(applicationContext, "Password harus sama", Toast.LENGTH_LONG).show()
-            } else {
-                val userRegister = Users(nameUser = username, password = password, confirmPassword = confirmPassword)
+            val userRegister =
+                Users(email = email,
+                username = username,
+                password = password,
+                fullName = fullname,
+                outlet = outlet)
 
-                Log.e("Check username", userRegister.nameUser)
-                Log.e("check hashCode", "password " + userRegister.password)
-                Log.e("check hashCode", "password2 " + userRegister.confirmPassword)
+            mainViewModel.insertUser(userRegister)
 
-                mainViewModel.insertUser(userRegister)
-
-                isRegister = true
-            }
+            isRegister = true
         }
+
         return isRegister
     }
 }

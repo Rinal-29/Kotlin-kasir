@@ -11,9 +11,10 @@ import kotlinx.android.parcel.Parcelize
 data class Users (
     @PrimaryKey (autoGenerate = true)
     val id : Int? = 0,
-    val nameUser : String? = null,
+    val email : String? = null,
+    val username : String? = null,
     val password : String? = null,
-    val confirmPassword : String? = null,
-    val imgUser : Int? = R.drawable.person3,
-    val status : String? = "Cashier"
+    val fullName : String? = null,
+    val outlet : String? = null,
+    val imgUser : Int? = R.drawable.ic_photo_camera
 ) : Parcelable

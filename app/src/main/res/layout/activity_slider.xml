@@ -25,9 +25,9 @@
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimary"
         android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
-        android:drawableTint="@color/gradient_start_color"
+        android:drawableTint="@color/deep_orange_500"
         android:text="@string/next"
-        android:textColor="@color/gradient_start_color"
+        android:textColor="@color/deep_orange_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -41,13 +41,14 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_next"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:tabIndicatorColor="@android:color/white"
         app:tabBackground="@drawable/indicator_selector" />
 
     <Button
         android:id="@+id/btn_start"
         android:textColor="@android:color/white"
         android:padding="15dp"
-        android:background="@drawable/btn_gradient"
+        android:background="@drawable/rounded_primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"

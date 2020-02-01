@@ -2,8 +2,8 @@
 
 <resources>
     <color name="colorPrimary">#FFF</color>
-    <color name="colorPrimaryDark">#3700b3</color>
-    <color name="colorAccent">#ffffff</color>
+    <color name="colorPrimaryDark">#FF7043</color>
+    <color name="colorAccent">#FF9100</color>
 
     <!--  color for buttons style  -->
     <color name="gradient_start_color">#3700b3</color>
@@ -21,4 +21,18 @@
     <!--  action bar color  -->
     <color name="actionBarColor">#6200ee</color>
 
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_90">#263238</color>
+    <color name="grey_60">#666666</color>
+
+
+    <color name="deep_orange_400">#FF7043</color>
+    <color name="deep_orange_500">#FF5722</color>
+    <color name="deep_orange_800">#D84315</color>
+
+    <color name="blue_grey_300">#90A4AE</color>
+
+    <color name="blue_600">#1E88E5</color>
 </resources>

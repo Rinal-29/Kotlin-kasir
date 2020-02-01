@@ -15,7 +15,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.rinal.kasir.entity.Users
 import com.squareup.picasso.Picasso
-import de.hdodenhof.circleimageview.CircleImageView
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,8 +43,8 @@ class MainActivity : AppCompatActivity() {
         user?.imgUser?.let {img ->
             Picasso.get().load(img).fit().into(profileImageView)
         }
-        userName.text = user?.nameUser
-        statusUser.text = user?.status
+        userName.text = user?.fullName
+        statusUser.text = user?.outlet
 
         appBarConfiguration = AppBarConfiguration(
             setOf(

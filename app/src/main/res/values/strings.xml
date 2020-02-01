@@ -3,7 +3,6 @@
     <string name="app_name">Kasir</string>
     <string name="next">Next</string>
     <string name="get_started">Get Started</string>
-    <string name="email">Email</string>
     <string name="my_email">muhafrinal@gmail.com</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
@@ -47,4 +46,13 @@
     <string name="username">Username</string>
     <string name="akun">Akun</string>
     <string name="edit_akun">Edit Akun</string>
+    <string name="email">Email</string>
+    <string name="outlet">Outlet</string>
+    <string name="full_name">Full Name</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="s_i_g_n_i_n">S I G N  I N</string>
+    <string name="new_user">New user?</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

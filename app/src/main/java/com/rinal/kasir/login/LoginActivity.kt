@@ -12,9 +12,6 @@ import com.rinal.kasir.R
 import com.rinal.kasir.model.MainViewModel
 import com.rinal.kasir.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.edt_password
-import kotlinx.android.synthetic.main.activity_login.edt_username
-import kotlinx.android.synthetic.main.activity_login.tv_register
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
@@ -31,16 +28,12 @@ class LoginActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_login)
 
-        img_back.setOnClickListener {
-            onBackPressed()
-        }
-
-        tv_register.setOnClickListener {
+        tv_sign_up.setOnClickListener {
             val intent = Intent(applicationContext, RegisterActivity::class.java)
             startActivity(intent)
         }
 
-        btn_login.setOnClickListener {
+        btn_sign_in.setOnClickListener {
             userLogin()
         }
     }
@@ -59,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
                 usernameDb = "null"
                 passwordDB = "null"
             } else {
-                usernameDb = it?.get(0)?.nameUser
+                usernameDb = it?.get(0)?.username
                 passwordDB = it?.get(0)?.password
             }
 
